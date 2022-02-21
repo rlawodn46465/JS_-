@@ -7,19 +7,19 @@
   height: 714px;
   background-color: lightgray;
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
   margin-bottom: 10px;
-  margin-left: 500px;
+  /* margin-left: 500px; */
 }
 .imgbox{
   display: flex;
+  position: relative;
   /* width: 1500px;
-  height: 714px; */
+  height: 714px;
+  top: 0px;
+  left: -500px; */
   width: 500px;
   height: 2142px;
-  position: relative;
-  /* top: 0px;
-  left: -500px; */
   top: -714px;
   left: 0px;
 }
@@ -61,8 +61,6 @@
   display: block;
   position: absolute;
   transition: all 1s;
-  /* top: 0px;
-  left: 500px; */
   top: 714px;
   left: 0px;
 }
@@ -79,8 +77,6 @@
   display: block;
   position: absolute;
   transition: all 1s;
-  /* top: 0px;
-  left: 1000px;  */
   top: 1428px;
   left: 0px;
 }
