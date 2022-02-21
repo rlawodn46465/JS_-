@@ -1,0 +1,94 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.bigbox{
+  width: 500px;
+  height: 714px;
+  background-color: lightgray;
+  position: relative;
+  /* overflow: hidden; */
+  margin-bottom: 10px;
+  margin-left: 500px;
+}
+.imgbox{
+  display: flex;
+  /* width: 1500px;
+  height: 714px; */
+  width: 500px;
+  height: 2142px;
+  position: relative;
+  /* top: 0px;
+  left: -500px; */
+  top: -714px;
+  left: 0px;
+}
+.pagebox{
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.pagebox .페이지버튼{
+  cursor: pointer;
+}
+.nextbox{
+  display: flex;
+  font-size: 30px;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nextbox .버튼{
+  cursor: pointer;
+}
+
+.imgbox .사진{
+  display: none;
+  top: 0;
+  left: 0;
+}
+.imgbox .전{
+  display: block;
+  position: absolute;
+  transition: all 1s;
+  top: 0px;
+  left: 0px;
+}
+.imgbox .중앙{
+  display: block;
+  position: absolute;
+  transition: all 1s;
+  /* top: 0px;
+  left: 500px; */
+  top: 714px;
+  left: 0px;
+}
+
+.imgbox .중앙2{
+  display: block;
+  position: absolute;
+  transition: all 1s;
+  top: 0px;
+  left: 500px;
+}
+
+.imgbox .후{
+  display: block;
+  position: absolute;
+  transition: all 1s;
+  /* top: 0px;
+  left: 1000px;  */
+  top: 1428px;
+  left: 0px;
+}
+
+.imgbox .후2{
+  display: block;
+  position: absolute;
+  transition: all 1s;
+  top: 0px;
+  left: 1000px; 
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  
+  <div class="bigbox">
+    <div class="imgbox">
+      <img class="사진 전" src="img/사주.png">
+      <img class="사진 중앙" src="img/수주.png">
+      <img class="사진 후" src="img/암주.png">
+      <img class="사진" src="img/연주.png">
+      <img class="사진" src="img/염주.png">
+      <img class="사진" src="img/음주.png">
+      <img class="사진" src="img/충주.png">
+      <img class="사진" src="img/풍주.png">
+      <img class="사진 " src="img/하주.png">
+    </div>
+    <div class="pagebox">
+      <span class="페이지버튼">●</span>
+      <span class="페이지버튼">○</span>
+      <span class="페이지버튼">○</span>
+    </div>
+    <div class="nextbox">
+      <span id="좌버튼" class="버튼">◀</span>
+      <span id="우버튼" class="버튼">▶</span>
+    </div>
+  </div>
+
+  <button id="좌우버튼">좌우</button>
+  <button id="상하버튼">상하</button>
+
+
+  <script>
+    const 전사진 = document.querySelector('.전');
+    const 후사진 = document.querySelector('.후');
+    const 중앙사진 = document.querySelector('.중앙');
+    const 사진박스 = document.querySelector('.imgbox');
+    const 좌버튼 = document.getElementById('좌버튼');
+    const 우버튼 = document.getElementById('우버튼');
+    const 사진수 = 사진박스.childElementCount;
+
+    let 전 = 0;
+    let 중 = 1;
+    let 후 = 2;
+
+    
+
+    좌버튼.addEventListener('click',function(){ 
+
+      if(사진박스.children[중].classList.contains('중앙')){
+        
+        for(var i = 0; i <사진수; i++){
+        사진박스.children[i].classList.remove('전');
+        사진박스.children[i].classList.remove('중앙');
+        사진박스.children[i].classList.remove('후');
+        }
+
+        전--;
+        중--;
+        후--;
+
+        전숫자전환(전);
+        중숫자전환(중);
+        후숫자전환(후); 
+
+        사진박스.children[전].classList.add('전');
+        사진박스.children[중].classList.add('중앙');
+        사진박스.children[후].classList.add('후');
+
+      } else{
+        for(var i = 0; i <사진수; i++){
+        사진박스.children[i].classList.remove('전');
+        사진박스.children[i].classList.remove('중앙2');
+        사진박스.children[i].classList.remove('후2');
+        }
+
+        전--;
+        중--;
+        후--;
+
+        전숫자전환(전);
+        중숫자전환(중);
+        후숫자전환(후); 
+
+        사진박스.children[전].classList.add('전');
+        사진박스.children[중].classList.add('중앙2');
+        사진박스.children[후].classList.add('후2');
+      }
+
+      
+    });
+
+    우버튼.addEventListener('click',function(){
+
+      if(사진박스.children[중].classList.contains('중앙')){
+
+        for(var i = 0; i <사진수; i++){
+          사진박스.children[i].classList.remove('전');
+          사진박스.children[i].classList.remove('중앙');
+          사진박스.children[i].classList.remove('후');
+        }
+        
+        전++;
+        중++;
+        후++;
+
+        전숫자전환(전);
+        중숫자전환(중);
+        후숫자전환(후); 
+
+        사진박스.children[전].classList.add('전');
+        사진박스.children[중].classList.add('중앙');
+        사진박스.children[후].classList.add('후');
+      } else{
+        for(var i = 0; i <사진수; i++){
+          사진박스.children[i].classList.remove('전');
+          사진박스.children[i].classList.remove('중앙2');
+          사진박스.children[i].classList.remove('후2');
+        }
+        
+        전++;
+        중++;
+        후++;
+
+        전숫자전환(전);
+        중숫자전환(중);
+        후숫자전환(후); 
+
+        사진박스.children[전].classList.add('전');
+        사진박스.children[중].classList.add('중앙2');
+        사진박스.children[후].classList.add('후2');
+      }
+    });
+
+    좌우버튼.addEventListener('click',function(){
+      좌우슬라이드();
+    });
+
+    상하버튼.addEventListener('click',function(){
+      상하슬라이드();
+    });
+
+    function 전숫자전환(n){
+      if(n == -1){
+        전 = 사진수-1;
+      } else if(n > 사진수-1){
+        전 = 0;
+      }
+    }
+    function 중숫자전환(n){
+      if(n == -1){
+        중 = 사진수-1;
+      } else if(n > 사진수-1){
+        중 = 0;
+      }
+    }
+    function 후숫자전환(n){
+      if(n == -1){
+        후 = 사진수-1;
+      } else if(n > 사진수-1){
+        후 = 0;
+      }
+    }
+
+    
+
+
+
+
+    function 좌우슬라이드(){  //후2
+      const 중앙교체 = document.querySelector('.중앙');
+      const 후교체 = document.querySelector('.후');
+      
+      중앙교체.classList.replace('중앙', '중앙2');
+      후교체.classList.replace('후', '후2');
+
+      사진박스.style.width = '1500px';
+      사진박스.style.height = '714px';
+      사진박스.style.top = '0px';
+      사진박스.style.left = '-500px';
+    }
+    function 상하슬라이드(){
+
+      const 중앙교체 = document.querySelector('.중앙2');
+      const 후교체 = document.querySelector('.후2');
+      
+      중앙교체.classList.replace('중앙2', '중앙');
+      후교체.classList.replace('후2', '후');
+
+      사진박스.style.width = '500px';
+      사진박스.style.height = '2142px';
+      사진박스.style.top = '-714px';
+      사진박스.style.left = '500px';
+    }
+
+    
+
+  </script>
+</body>
+</html>
